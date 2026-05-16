@@ -1,0 +1,21 @@
+>>> import json
+>>> from emotion_detection import emotion_detector
+>>> response = emotion_detector ("i am so happy i am doing this")
+>>> formatted_response = json.loads(response)
+>>> print(formatted_response)
+{'emotionPredictions': [{'emotion': {'anger': 0.0043079085, 'disgust': 0.00041127237, 'fear': 0.0037504788, 'joy': 0.9918804, 'sadness': 0.014091322}, 'target': '', 'emotionMentions': [{'span': {'begin': 0, 'end': 29, 'text': 'i am so happy i am doing this'}, 'emotion': {'anger': 0.0043079085, 'disgust': 0.00041127237, 'fear': 0.0037504788, 'joy': 0.9918804, 'sadness': 0.014091322}}]}], 'producerId': {'name': 'Ensemble Aggregated Emotion Workflow', 'version': '0.0.1'}}
+>>> 
+>>> emotions = formatted_response['emotionPredictions'][0]['emotion']
+>>> dominant_emotion = max(emotions, key=emotions.get)
+>>> dominant_emotion = max(emotions, key=emotions.
+result = {
+...     'anger': emotions.get('anger', 0),
+...     'disgust': emotions.get('disgust', 0),
+...     'fear': emotions.get('fear', 0),
+...     'joy': emotions.get('joy', 0),
+...     'sadness': emotions.get('sadness', 0),
+...     'dominant_emotion': dominant_emotion
+... }
+>>> print(result)
+{'anger': 0.0043079085, 'disgust': 0.00041127237, 'fear': 0.0037504788, 'joy': 0.9918804, 'sadness': 0.014091322, 'dominant_emotion': 'joy'}
+>>> 
