@@ -10,8 +10,7 @@ def emotion_detector_route():
     if not text_to_analyze:
         return "Please provide text to analyze using the 'textToAnalyze' query parameter."
 
-    response = emotion_detector(text_to_analyze)
-    formatted_response = json.loads(response)
+    formatted_response = emotion_detector(text_to_analyze)
     emotions = formatted_response['emotionPredictions'][0]['emotion']
     dominant_emotion = max(emotions, key=emotions.get)
 
