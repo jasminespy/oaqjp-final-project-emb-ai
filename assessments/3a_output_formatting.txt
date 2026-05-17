@@ -7,7 +7,6 @@
 >>> 
 >>> emotions = formatted_response['emotionPredictions'][0]['emotion']
 >>> dominant_emotion = max(emotions, key=emotions.get)
->>> dominant_emotion = max(emotions, key=emotions.
 result = {
 ...     'anger': emotions.get('anger', 0),
 ...     'disgust': emotions.get('disgust', 0),
