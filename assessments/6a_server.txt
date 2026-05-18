@@ -14,7 +14,7 @@ def emotion_detector_route():
 
 
     if not text_to_analyze:
-        return "Invalid text! Please try again!."
+        return "Invalid input! Please provide text to analyze."
 
     # Get result from emotion detector (dictionary)
     result = emotion_detector(text_to_analyze)
@@ -43,5 +43,3 @@ def emotion_detector_route():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
-
