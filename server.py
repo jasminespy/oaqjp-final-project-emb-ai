@@ -14,7 +14,7 @@ def emotion_detector_route():
 
 
     if not text_to_analyze:
-        return "Invalid text! Please try again!."
+        return "Invalid text! Please try again!.", 400
 
     # Get result from emotion detector (dictionary)
     result = emotion_detector(text_to_analyze)
